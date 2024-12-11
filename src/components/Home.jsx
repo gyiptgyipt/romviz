@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Container } from "react-bootstrap";
+import Connection from "./Connection";
 
 class Home extends Component {
     state = { }
@@ -8,9 +9,12 @@ class Home extends Component {
         return (
         
         <main>
-            <Container>
-            <h1> Home</h1>
-            </Container>
+            
+
+            <h1 className="text-center mt-3"> MISSION PLANNER PAGE</h1>
+
+                <Connection/>
+             
         </main>
             
         );

@@ -10,8 +10,9 @@ class Body extends Component {
             <Container>
                 <Router>
                     <Switch>
-                        <Route path="/" exact component={Home} />
-                        <Route path="/link" exact component={Get_Help} />
+                        <Route path="/home" exact component={Home} />
+                        <Route path="/link" exact component={Get_Help} /> 
+                        {/* get help  */}
                     </Switch>
                 </Router>
             </Container>
