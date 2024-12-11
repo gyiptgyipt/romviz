@@ -8,7 +8,9 @@ class Home extends Component {
         return (
         
         <main>
+            <Container>
             <h1> Home</h1>
+            </Container>
         </main>
             
         );

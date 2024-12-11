@@ -1,26 +1,21 @@
 import React, { Component } from "react";
 import { Container } from "react-bootstrap";
-import { Route , BrowserRouter as Router, Switch } from "react-router-dom";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import Home from "./Home";
-import About from "./About";
+import Get_Help from "./Get_Help";
 
 class Body extends Component {
-
     render() {
         return (
-        <Container>
-            <Router>
-                <Switch>
-                    <Route path="/" Component={Home}></Route>
-                    <Route path="/link" exact Component={About}></Route>
-
-
-                </Switch>
-
-
-            </Router>
-        </Container>
-             );
+            <Container>
+                <Router>
+                    <Switch>
+                        <Route path="/" exact component={Home} />
+                        <Route path="/link" exact component={Get_Help} />
+                    </Switch>
+                </Router>
+            </Container>
+        );
     }
 }
 
