@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ROSLIB from "roslib";
 // import Config from "../script/config";
+import * as ROS2D from "ros2d";
 
 class Map extends Component {
   state = { connected: false }; // Initialize state
@@ -52,18 +53,19 @@ class Map extends Component {
   }
 
   view_map() {
-    var viewer = new window.ROS2D.Viewer({
+    var viewer = new ROS2D.Viewer({
       divID: "nav_div",
       width: 640,
       height: 480,
     });
 
-    var navClient = new window.NAV2D.OccupancyGridClientNav({
-      ros: this.ros,
-      rootObject: viewer.scene,
-      viewer: viewer,
-      severName: "/move_base",
-      withOrientation: true,
+    var gridClient = new ROS2D.OccupancyGridClient({
+      ros : this.ros,
+      rootObject : viewer.scene
+    });
+    // Scale the canvas to fit to the map
+    gridClient.on('change', function(){
+      viewer.scaleToDimensions(gridClient.currentGrid.width, gridClient.currentGrid.height);
     });
   }
 
