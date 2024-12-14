@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Container } from "react-bootstrap";
 import Connection from "./Connection";
+import Map from "./map";
 
 class Home extends Component {
     state = { }
@@ -15,6 +16,8 @@ class Home extends Component {
 
                 <Connection/>
              
+                <h1>Map</h1>
+                <Map/>
         </main>
             
         );

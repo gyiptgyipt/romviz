@@ -19,7 +19,7 @@ class Connection extends Component {
 
         // Define ROS connection events
         this.ros.on("connection", () => {
-            console.log("Connection to ROS 2 established!");
+            console.log("Connection to ROS 2 established Connection!");
             this.setState({ connected: true });
         });
 
